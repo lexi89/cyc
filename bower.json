@@ -1,0 +1,19 @@
+{
+  "name": "cyc",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Alexey Yanovski <alexey.yanovski1@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lexi89/cyc",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
