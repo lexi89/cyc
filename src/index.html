@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="" >
+<html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,8 +14,8 @@
     <body ng-app ="cyc" ng-cloak>
 
 
-      <section id = "hero" layout = "column" layout-align = "center center" class = "md-padding">
-        <div>
+      <section id = "hero" layout = "column" layout-align = "center center">
+        <div class ="md-padding">
           <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
         </div>
       </section>
@@ -26,7 +26,11 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque obcaecati quae aliquid dolore explicabo rerum. Officiis, possimus aliquid quos unde sequi, vel consequatur accusantium optio voluptatibus necessitatibus. In, amet, maxime.</p>
       </section>
 
-      <section id = "pricing" layout = "column" layout-align = "center center">
+      <section
+      id = "pricing"
+      layout = "column"
+      layout-align = "start stretch"
+      class = "md-padding">
         <h1>Pricing</h1>
         <table>
           <tr>
@@ -64,42 +68,37 @@
       </section>
 
       <section id = "testimonials">
-        <div class="carousel-wrapper">
-          <md-button class = "md-primary md-raised" id = "previous">Previous</md-button>
+        <div id="carousel-wrapper">
+          <div class = "arrow" id = "previous"></div>
           <ol class="testimonial-list">
-            <li class = "slide">
+            <li class = "slide" layout = "column" layout-align = "center center">
               <img src="http://fillmurray.com/150/150" alt="" />
               <div class="testimonial-text">
-                <h1>0</h1>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore pariatur dignissimos praesentium vero aperiam excepturi nobis, explicabo, labore! Nulla quibusdam aspernatur eaque. Minima, iste a repellat. Voluptatem iusto ab omnis?
               </div></li>
-            <li class = "slide">
+            <li class = "slide" layout = "column" layout-align = "center center">
               <img src="http://fillmurray.com/150/150" alt="" />
               <div class="testimonial-text">
-                <h1>1</h1>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quod voluptatibus beatae repellendus, ipsam fugiat est! Quae saepe repudiandae, pariatur sunt maiores deserunt, aliquid nemo rem minima adipisci molestiae labore.
               </div></li>
-            <li class = "slide">
+            <li class = "slide" layout = "column" layout-align = "center center">
               <img src="http://fillmurray.com/150/150" alt="" />
               <div class="testimonial-text">
-                <h1>2</h1>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate pariatur molestias, voluptatum nihil quam odio nostrum sit! Autem iure velit architecto dicta numquam, et, at sapiente, dolore dolor soluta a.
               </div></li>
-            <li class = "slide">
+            <li class = "slide" layout = "column" layout-align = "center center">
               <img src="http://fillmurray.com/150/150" alt="" />
               <div class="testimonial-text">
-                <h1>3</h1>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reiciendis eos, quis omnis, expedita ducimus odit repellendus temporibus adipisci nisi. Quaerat facere officiis quisquam alias sint labore perspiciatis placeat nostrum?
               </div></li>
-            <li class = "slide">
+            <li class = "slide" layout = "column" layout-align = "center center">
               <img src="http://fillmurray.com/150/150" alt="" />
               <div class="testimonial-text">
-                <h1>4</h1>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi nesciunt recusandae unde, perspiciatis laboriosam dolor repudiandae. Fuga pariatur temporibus expedita, eligendi cumque. Placeat doloribus dolor optio cum impedit ab beatae.
               </div>
             </li>
           </ol>
-          <md-button class = "md-primary md-raised" id = "next">Next</md-button>
+          <div class = "arrow" id="next"></div>
         </div>
       </section>
 
@@ -187,8 +186,5 @@
 
         <script src = "assets/js/main.js"></script>
 
-        <script type="text/javascript">
-          angular.module("cyc", ["ngMaterial", "ngMdIcons"]);
-        </script>
     </body>
 </html>
