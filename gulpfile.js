@@ -21,6 +21,11 @@ gulp.task('browser-sync', function() {
     gulp.watch("src/assets/img/**/*.*", ["copyImages"]);
 });
 
+gulp.task("copyFonts",function () {
+  return gulp.src("src/assets/fonts/**/*.*")
+  .pipe(gulp.dest("assets/fonts"));
+});
+
 gulp.task('htmlmin', function() {
   return gulp.src('src/index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
@@ -29,7 +34,7 @@ gulp.task('htmlmin', function() {
 });
 
 gulp.task("js", function () {
-  return gulp.src("src/js/*.js")
+  return gulp.src("src/assets/js/*.js")
   .pipe(uglify())
   .pipe(gulp.dest("assets/js"))
   .pipe(browserSync.stream());
@@ -57,7 +62,7 @@ gulp.task("copyLibs", function () {
 
 gulp.task("copyImages", function () {
   return gulp.src("src/assets/img/*.*")
-  .pipe(gulp.dest('dist/assets/img/'))
+  .pipe(gulp.dest('assets/img'))
   .pipe(browserSync.stream());
 });
 

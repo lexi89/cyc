@@ -1,5 +1,48 @@
+@import "fonts";
 @import "vars";
 
-h1{
-  color: $highlight;
+body h1,h2,h3,p{
+  color: $text;
+}
+
+#hero{
+  min-height: 100vh;
+  font-family: avenir-medium;
+  font-size: 2em;
+}
+
+.footer-icons{
+  fill: rgba($text, 0.3);
+  margin: 0.5em;
+}
+
+#copyright-text{
+  color: rgba($text, 0.3);
+  font-size: 0.7em;
+}
+
+#testimonials{
+}
+
+.carousel-wrapper{
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-list{
+  list-style: none;
+  text-align: center;
+  & li{
+    position: absolute;
+    top: 0px;
+    right: 2000px;
+    text-align: center;
+    width: 50%
+  }
+}
+
+.active{
+  right: inherit;
+  left: 25%;
 }
