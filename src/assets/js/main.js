@@ -10,39 +10,14 @@
   var pause = false;
   var nextBtn = document.getElementById("next");
   var prevBtn = document.getElementById("previous");
-
-
-// COULDNT FIND THE HEIGHT OF SHIT BEFORE IT'S LOADED.
-  setTimeout(function () {
-    var height = slides[2].clientHeight;
-
-    console.log(height);
-  },1000);
-
-  var slidesArr = [].slice.call(slides);
-
-
-  var maxHeight = slidesArr.reduce(function(max, current, i){
-
-    // var height = .clientHeight;
-    if (current.clientHeight > max){
-      max = current;
-    }
-    return max;
-  }, 0);
-
-  console.log(maxHeight);
-
   currentSlide.id = "active";
-  adjustContainer();
 
+  setCarouselHeight();
 
   nextBtn.addEventListener("click", next);
   prevBtn.addEventListener("click", previous);
   carousel.addEventListener("mouseover", pauseTimer);
   carousel.addEventListener("mouseout", resumeTimer);
-
-
 
   var autoSlider = setInterval(function () {
     if (currentSlideNumber < (slides.length - 1) && !pause){
@@ -64,18 +39,12 @@
     currentSlideNumber = 0;
   }
 
-  function adjustContainer(){
-    var currentSlideHeight = document.getElementById("active").clientHeight;
-    carousel.style.height = (currentSlideHeight*1.2) + "px";
-  }
-
   function next() {
     if (currentSlideNumber < (slides.length-1)){
       currentSlide.id = "";
       currentSlideNumber ++;
       currentSlide = slides[currentSlideNumber];
       currentSlide.id = "active";
-      adjustContainer();
     } else {
       resetCounter();
       next();
@@ -88,15 +57,25 @@
       currentSlideNumber --;
       currentSlide = slides[currentSlideNumber];
       currentSlide.id = "active";
-      adjustContainer();
     } else {
       currentSlide.id = "";
       currentSlideNumber = (slides.length-1);
       currentSlide = slides[currentSlideNumber];
       currentSlide.id = "active";
-      adjustContainer();
     }
+  }
 
+  function setCarouselHeight(){
+    var slidesArr = [].slice.call(slides);
+    setTimeout(function () {
+      var maxHeight = slidesArr.reduce(function (max,current,i) {
+        if (current.clientHeight > max){
+          max = current.clientHeight;
+        }
+        return max;
+      },0)
+      carousel.style.height = (maxHeight * 1.1) + "px";
+    },1000);
   }
 
 })();
