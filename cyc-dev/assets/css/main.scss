@@ -1,0 +1,52 @@
+@import "fonts";
+@import "vars";
+
+body h1,h2,h3,p, li{
+  color: $dark-grey;
+  font-family: avenir-medium;
+}
+
+body{
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: $light-grey;
+}
+
+#header{
+  background-image: url("assets/img/hero.jpg");
+  background-position: 80% 50%;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & h1{
+    font-size: 144px;
+    text-align: right;
+    color: white;
+    text-shadow: -10px 10px 0px $pink;
+    text-transform: uppercase;
+    width: 50%;
+  }
+}
+
+
+
+p{
+  max-width: 700px;
+  margin: 0 auto;
+  @include tablets{
+    max-width: 80%;
+  }
+  @include phones{
+    max-width: 80%;
+  }
+}
+
+.section-headings{
+  text-transform: uppercase;
+  text-align: center;
+}
