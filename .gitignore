@@ -3,3 +3,4 @@ bower_components/
 *.sketch
 **/.DS_Store
 .idea
+local-wordpress/
